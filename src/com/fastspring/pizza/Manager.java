@@ -90,6 +90,7 @@ public class Manager extends HttpServlet {
 			writer.println("</td>");
 			writer.println("</tr>");
 		}
+			
 		writer.println("</form>");
 		writer.println("</table>");
 		writer.println("</body>");
@@ -118,43 +119,48 @@ public class Manager extends HttpServlet {
 		
 		HashMap<Integer, User> orderMap = PendingOrders.getOrders();
 		
-		for (Integer x : orderMap.keySet())
+		if (orderMap != null && !orderMap.isEmpty())
 		{
-			Order order = orderMap.get(x).getCurrentOrder();
-
-			writer.println("<tr>");
-			writer.println("<td>");
-			writer.println(x);
-			writer.println("</td>");
-			writer.println("<td>");
-			writer.println(statusList.get(order.getState()));
-			writer.println("</td>");
-			writer.println("<td>");
-			
-			ArrayList<String> pizzas = order.getPizzas();
-			ArrayList<Integer> quantities = order.getQuantities();
-			ArrayList<String> sizes = order.getSizes();
-			
-			for (int z = 0; z < pizzas.size(); z++)
+			for (Integer x : orderMap.keySet())
 			{
-				writer.println("("+quantities.get(z)+"-"+sizes.get(z)+") "+pizzas.get(z)+" pizza");
-				writer.println("</br>");
+				Order order = orderMap.get(x).getCurrentOrder();
+	
+				writer.println("<tr>");
+				writer.println("<td>");
+				writer.println(x);
+				writer.println("</td>");
+				writer.println("<td>");
+				writer.println(statusList.get(order.getState()));
+				writer.println("</td>");
+				writer.println("<td>");
+				
+				ArrayList<String> pizzas = order.getPizzas();
+				ArrayList<Integer> quantities = order.getQuantities();
+				ArrayList<String> sizes = order.getSizes();
+				
+				for (int z = 0; z < pizzas.size(); z++)
+				{
+					writer.println("("+quantities.get(z)+"-"+sizes.get(z)+") "+pizzas.get(z)+" pizza");
+					writer.println("</br>");
+				}
+				
+				User usr = orderMap.get(x);
+				writer.println("<td>");
+				writer.println(usr.getName());
+				writer.println("</td>");
+				writer.println("<td>");
+				writer.println(usr.getAddress());
+				writer.println("</td>");
+				writer.println("<td>");
+				writer.println(usr.getPhoneNumberFormatted());
+				writer.println("</td>");
+				writer.println("<td>");
+				writer.println("<input type=\"submit\" name=\""+x+"\" value=\"Update\"/>");
+				writer.println("</td>");
+				writer.println("</tr>");
 			}
-			
-			User usr = orderMap.get(x);
-			writer.println("<td>");
-			writer.println(usr.getName());
-			writer.println("</td>");
-			writer.println("<td>");
-			writer.println(usr.getAddress());
-			writer.println("</td>");
-			writer.println("<td>");
-			writer.println(usr.getPhoneNumberFormatted());
-			writer.println("</td>");
-			writer.println("<td>");
-			writer.println("<input type=\"submit\" name=\""+x+"\" value=\"Update\"/>");
-			writer.println("</td>");
-			writer.println("</tr>");
+		} else {
+			writer.println("<h4> No orders pending at this time. </h4>");
 		}
 		writer.println("</form>");
 		writer.println("</table>");
