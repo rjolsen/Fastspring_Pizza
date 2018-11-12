@@ -47,7 +47,7 @@ public class Manager extends HttpServlet {
 		writer.println("</head>");
 		writer.println("<body>");
 		writer.println("<h2> Orders </h2>");
-		writer.println("<table cellspacing=\"20px\">");
+		writer.println("<table>");
 		writer.println("<form method='post'>");
 		
 		HashMap<Integer, User> orderMap = PendingOrders.getOrders();
@@ -93,6 +93,12 @@ public class Manager extends HttpServlet {
 			
 		writer.println("</form>");
 		writer.println("</table>");
+		
+		writer.println("</br></br>");
+		writer.println("<form action=\"UpdateToppings\" method=\"get\">");
+		writer.println("<input type=\"submit\" value=\"UpdateToppings\"/>");
+		writer.println("</form>");
+
 		writer.println("</body>");
 		writer.println("</html>");
 	}
@@ -114,7 +120,7 @@ public class Manager extends HttpServlet {
 		writer.println("</head>");
 		writer.println("<body>");
 		writer.println("<h2> Orders </h2>");
-		writer.println("<table cellspacing=\"20px\">");
+		writer.println("<table>");
 		writer.println("<form method='post'>");
 		
 		HashMap<Integer, User> orderMap = PendingOrders.getOrders();
@@ -164,6 +170,12 @@ public class Manager extends HttpServlet {
 		}
 		writer.println("</form>");
 		writer.println("</table>");
+		
+		writer.println("</br></br>");
+		writer.println("<form action=\"UpdateToppings\" method=\"get\">");
+		writer.println("<input type=\"submit\" value=\"UpdateToppings\"/>");
+		writer.println("</form>");
+		
 		writer.println("</body>");
 		writer.println("</html>");
 	}

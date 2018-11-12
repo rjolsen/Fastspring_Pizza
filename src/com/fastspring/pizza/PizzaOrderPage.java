@@ -32,7 +32,7 @@ public class PizzaOrderPage extends HttpServlet {
 		response.setContentType("text/html");
 		
 		// Set OrderID
-		HttpSession session=request.getSession();
+		HttpSession session = request.getSession();
 		int orderId = PendingOrders.getNumOrders();
 		PendingOrders.incNumOrders();
 		session.setAttribute("OrderID", orderId+1);
@@ -50,7 +50,7 @@ public class PizzaOrderPage extends HttpServlet {
 		Pizza p = new Pizza();
 		ArrayList<String> pizzaList = p.getPizzaList();	
 		ArrayList<String> pizzaSizes = p.getPizzaSizes();
-		ArrayList<String> pizzaToppings = p.getPizzaToppings();
+		ArrayList<String> pizzaToppings = Pizza.getPizzaToppings();
 		
 		for (int i = 0; i < pizzaList.size(); i++)
 		{

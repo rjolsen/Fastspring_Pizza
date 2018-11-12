@@ -77,17 +77,17 @@ class PizzaTest {
 		assertArrayEquals(toppings.toArray(), p.getPizzaToppings().toArray());
 	}
 
-	@Test
-	void testSetPizzaToppings() {
-		ArrayList<String> toppings = new ArrayList<String>();
-		toppings.add("Tomatoes");
-		toppings.add("Olives");
-		toppings.add("Red Peppers");
-		toppings.add("Mushrooms");
-		toppings.add("Ham");
-		toppings.add("Chicken" );
-		toppings.add("Pepperoni");
-		p.setPizzaToppings(toppings);
-		assertArrayEquals(toppings.toArray(), p.getPizzaToppings().toArray());
-	}
+//	@Test
+//	void testSetPizzaToppings() {
+//		ArrayList<String> toppings = new ArrayList<String>();
+//		toppings.add("Tomatoes");
+//		toppings.add("Olives");
+//		toppings.add("Red Peppers");
+//		toppings.add("Mushrooms");
+//		toppings.add("Ham");
+//		toppings.add("Chicken" );
+//		toppings.add("Pepperoni");
+//		p.setPizzaToppings(toppings);
+//		assertArrayEquals(toppings.toArray(), p.getPizzaToppings().toArray());
+//	}
 }

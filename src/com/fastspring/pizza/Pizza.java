@@ -9,8 +9,19 @@ public class Pizza {
 
 	Map<String, Double> pizzas;
 	ArrayList<String> pizzaSizes;
-	ArrayList<String> pizzaToppings;
 
+	static ArrayList<String> pizzaToppings;
+	static {
+		pizzaToppings = new ArrayList<String>();
+		pizzaToppings.add("Tomatoes");
+		pizzaToppings.add("Olives");
+		pizzaToppings.add("Red Peppers");
+		pizzaToppings.add("Mushrooms");
+		pizzaToppings.add("Ham");
+		pizzaToppings.add("Chicken" );
+		pizzaToppings.add("Pepperoni");
+	}
+	
 	public Pizza()
 	{
 		pizzas = new HashMap<String, Double>();
@@ -22,15 +33,6 @@ public class Pizza {
 		pizzaSizes.add("Small");
 		pizzaSizes.add("Medium + $2");
 		pizzaSizes.add("Large + $3");
-		
-		pizzaToppings = new ArrayList<String>();
-		pizzaToppings.add("Tomatoes");
-		pizzaToppings.add("Olives");
-		pizzaToppings.add("Red Peppers");
-		pizzaToppings.add("Mushrooms");
-		pizzaToppings.add("Ham");
-		pizzaToppings.add("Chicken" );
-		pizzaToppings.add("Pepperoni");
 	}
 	
 	public Map<String, Double> getPizzas() {
@@ -57,11 +59,18 @@ public class Pizza {
 		this.pizzaSizes = pizzaSizes;
 	}
 	
-	public ArrayList<String> getPizzaToppings() {
+	public static ArrayList<String> getPizzaToppings() {
 		return pizzaToppings;
 	}
 	
-	public void setPizzaToppings(ArrayList<String> pizzaToppings) {
-		this.pizzaToppings = pizzaToppings;
+	public static void removePizzaTopings(String topping) {
+		if (Pizza.pizzaToppings.contains(topping)) {
+			int i = Pizza.pizzaToppings.indexOf(topping);
+			Pizza.pizzaToppings.remove(i);
+		}
+	}
+	
+	public static void addPizzaToppings(String topping) {
+		Pizza.pizzaToppings.add(topping);
 	}
 }

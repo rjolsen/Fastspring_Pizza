@@ -30,43 +30,43 @@ public class ContactInfoPage extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType("text/html");
 		PrintWriter writer = response.getWriter();
-		writer.print("<html>");
-		writer.print("<head>");
-		writer.print("<title> Contact Info </title>");
-		writer.print("</head>");
-		writer.print("<body>");
-		writer.print("<h2> Enter your contact information </h2>");
+		writer.println("<html>");
+		writer.println("<head>");
+		writer.println("<title> Contact Info </title>");
+		writer.println("</head>");
+		writer.println("<body>");
+		writer.println("<h2> Enter your contact information </h2>");
 		
 		// Get Order ID from session:
 		HttpSession session = request.getSession();
 		int orderId = (Integer)session.getAttribute("OrderID");
-		writer.print("<h3> Order number : "+orderId+"</h3>");
-		writer.print("<form name='frm' method='post'>");
-		writer.print("<table>");
-		writer.print("<tr>");
-		writer.print("<td> Name :</td>");
-		writer.print("<td>");
-		writer.print("<input type=\"text\" name=\"name\" placeholder=\"Enter Name\" required>");
-		writer.print("</td>");
-		writer.print("</tr>");
-		writer.print("<tr>");
-		writer.print("<td> Phone number: </td>");
-		writer.print("<td>");
-		writer.print("<input type=\"number\" name=\"mobile\" placeholder=\"Enter Phone Number\" min=\"0\" required>");
-		writer.print("</td>");
-		writer.print("</tr>");
-		writer.print("<tr>");
-		writer.print("<td>Address :</td>");
-		writer.print("<td>");
-		writer.print("<textarea name=\"address\" required></textarea>");
-		writer.print("</td>");
-		writer.print("</tr>");
-		writer.print("</table>");
-		writer.print("<br/><br/>");
-		writer.print("<input type=\"submit\" value=\"Place Order\">");
-		writer.print("</form>");
-		writer.print("</body>");
-		writer.print("</html>");
+		writer.println("<h3> Order number : "+orderId+"</h3>");
+		writer.println("<form name='frm' method='post'>");
+		writer.println("<table>");
+		writer.println("<tr>");
+		writer.println("<td> Name :</td>");
+		writer.println("<td>");
+		writer.println("<input type=\"text\" name=\"name\" placeholder=\"Enter Name\" required>");
+		writer.println("</td>");
+		writer.println("</tr>");
+		writer.println("<tr>");
+		writer.println("<td> Phone number: </td>");
+		writer.println("<td>");
+		writer.println("<input type=\"number\" name=\"mobile\" placeholder=\"Enter Phone Number\" min=\"0\" required>");
+		writer.println("</td>");
+		writer.println("</tr>");
+		writer.println("<tr>");
+		writer.println("<td>Address :</td>");
+		writer.println("<td>");
+		writer.println("<textarea name=\"address\" required></textarea>");
+		writer.println("</td>");
+		writer.println("</tr>");
+		writer.println("</table>");
+		writer.println("<br/><br/>");
+		writer.println("<input type=\"submit\" value=\"Place Order\">");
+		writer.println("</form>");
+		writer.println("</body>");
+		writer.println("</html>");
 	}
 
 	/**
