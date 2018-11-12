@@ -1,79 +1,132 @@
 package com.fastspring.pizza;
 
+import static org.junit.Assert.assertArrayEquals;
 import static org.junit.jupiter.api.Assertions.*;
+
+import java.util.ArrayList;
 
 import org.junit.jupiter.api.Test;
 
 class OrderTest {
-
+	Order ord = new Order();
+	
 	@Test
 	void testGetOrderId() {
-		fail("Not yet implemented");
+		ord.orderId = 1;
+		assertEquals(1, ord.getOrderId());
 	}
 
 	@Test
 	void testSetOrderId() {
-		fail("Not yet implemented");
+		ord.setOrderId(3);
+		assertEquals(3, ord.getOrderId());
 	}
-
+	
 	@Test
 	void testGetState() {
-		fail("Not yet implemented");
+		ord.state = 3;
+		assertEquals(3, ord.getState());
 	}
 
 	@Test
 	void testSetState() {
-		fail("Not yet implemented");
+		ord.setState(4);
+		assertEquals(4, ord.getState());
 	}
 
 	@Test
 	void testGetTotalPrice() {
-		fail("Not yet implemented");
+		ord.totalPrice = 23.50;
+		assertEquals(23.50, ord.getTotalPrice());
 	}
 
 	@Test
 	void testSetTotalPrice() {
-		fail("Not yet implemented");
+		ord.setTotalPrice(26.00);
+		assertEquals(26.00, ord.getTotalPrice());
 	}
 
 	@Test
 	void testGetPizzas() {
-		fail("Not yet implemented");
+		ord.pizzas = new ArrayList<String>();
+		ord.pizzas.add("Cheese");
+		ord.pizzas.add("Pepperoni");
+		ord.pizzas.add("Meat");
+		assertArrayEquals(ord.pizzas.toArray(), ord.getPizzas().toArray());
 	}
 
 	@Test
 	void testSetPizzas() {
-		fail("Not yet implemented");
+		ord.pizzas = new ArrayList<String>();
+		ord.pizzas.add("Cheese");
+		ord.pizzas.add("Pepperoni");
+		ord.pizzas.add("Meat");
+		ord.setPizzas(ord.pizzas);
+		assertArrayEquals(ord.pizzas.toArray(), ord.getPizzas().toArray());
 	}
 
 	@Test
 	void testGetSizes() {
-		fail("Not yet implemented");
+		ord.sizes = new ArrayList<String>();
+		ord.sizes.add("Small");
+		ord.sizes.add("Medium + $2");
+		ord.sizes.add("Large + $3");
+		assertArrayEquals(ord.sizes.toArray(), ord.getSizes().toArray());
 	}
 
 	@Test
 	void testSetSizes() {
-		fail("Not yet implemented");
+		ord.sizes = new ArrayList<String>();
+		ord.sizes.add("Small");
+		ord.sizes.add("Medium + $2");
+		ord.sizes.add("Large + $3");
+		ord.setSizes(ord.sizes);
+		assertArrayEquals(ord.sizes.toArray(), ord.getSizes().toArray());
 	}
 
 	@Test
 	void testGetQuantities() {
-		fail("Not yet implemented");
+		ord.quantities = new ArrayList<Integer>();
+		ord.quantities.add(1);
+		ord.quantities.add(2);
+		ord.quantities.add(3);
+		assertArrayEquals(ord.quantities.toArray(), ord.getQuantities().toArray());
 	}
 
 	@Test
 	void testSetQuantities() {
-		fail("Not yet implemented");
+		ord.quantities = new ArrayList<Integer>();
+		ord.quantities.add(1);
+		ord.quantities.add(2);
+		ord.quantities.add(3);
+		ord.setQuantities(ord.quantities);
+		assertArrayEquals(ord.quantities.toArray(), ord.getQuantities().toArray());
 	}
 
 	@Test
 	void testGetToppings() {
-		fail("Not yet implemented");
+		ord.toppings = new ArrayList<String>();
+		ord.toppings.add("Tomatoes");
+		ord.toppings.add("Olives");
+		ord.toppings.add("Red Peppers");
+		ord.toppings.add("Mushrooms");
+		ord.toppings.add("Ham");
+		ord.toppings.add("Chicken" );
+		ord.toppings.add("Pepperoni");
+		assertArrayEquals(ord.toppings.toArray(), ord.getToppings().toArray());
 	}
 
 	@Test
 	void testSetToppings() {
-		fail("Not yet implemented");
+		ord.toppings = new ArrayList<String>();
+		ord.toppings.add("Tomatoes");
+		ord.toppings.add("Olives");
+		ord.toppings.add("Red Peppers");
+		ord.toppings.add("Mushrooms");
+		ord.toppings.add("Ham");
+		ord.toppings.add("Chicken" );
+		ord.toppings.add("Pepperoni");
+		ord.setToppings(ord.toppings);
+		assertArrayEquals(ord.toppings.toArray(), ord.getToppings().toArray());
 	}
-
 }

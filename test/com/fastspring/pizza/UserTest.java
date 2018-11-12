@@ -6,52 +6,60 @@ import org.junit.jupiter.api.Test;
 
 class UserTest {
 
-	String name = "Rick";	
 	User usr = new User();
 	  
 	@Test
 	void testGetName() {
-		usr.getName();
+		usr.name = "Tom";
+		assertEquals("Tom", usr.getName());
 	}
 
 	@Test
 	void testSetName() {
-		usr.setName(name);
+		usr.setName("Joe");
+		assertEquals("Joe", usr.getName());
 	}
 
 	@Test
 	void testGetAddress() {
-		fail("Not yet implemented");
+		usr.address = "111 Spring Dr.";
+		assertEquals("111 Spring Dr.", usr.getAddress());
 	}
 
 	@Test
 	void testSetAddress() {
-		fail("Not yet implemented");
+		usr.setAddress("3423 Test Ave");
+		assertEquals("3423 Test Ave", usr.getAddress());
 	}
 
 	@Test
 	void testGetPhoneNumber() {
-		fail("Not yet implemented");
+		usr.phoneNumber = 1112234;
+		assertEquals(1112234, usr.getPhoneNumber());
 	}
 
 	@Test
 	void testGetPhoneNumberFormatted() {
-		fail("Not yet implemented");
+		usr.phoneNumber = 6023987;
+		assertEquals("602-3987", usr.getPhoneNumberFormatted());
 	}
 
 	@Test
 	void testSetPhoneNumber() {
-		fail("Not yet implemented");
+		usr.setPhoneNumber(2023344);
+		assertEquals(2023344, usr.getPhoneNumber());
 	}
 
 	@Test
 	void testGetCurrentOrder() {
-		fail("Not yet implemented");
+		usr.currentOrder = new Order();
+		assertEquals(usr.currentOrder, usr.getCurrentOrder());
 	}
 
 	@Test
 	void testSetCurrentOrder() {
-		fail("Not yet implemented");
+		usr.setCurrentOrder(new Order());
+		assertEquals(usr.currentOrder, usr.getCurrentOrder());
 	}
 
 }

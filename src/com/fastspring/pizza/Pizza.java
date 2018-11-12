@@ -57,25 +57,11 @@ public class Pizza {
 		this.pizzaSizes = pizzaSizes;
 	}
 	
-	public String thisPizzaSizes(int x) {
-		if (x < pizzaSizes.size()) {
-			return pizzaSizes.get(x);
-		}
-		return "";
-	}
-	
 	public ArrayList<String> getPizzaToppings() {
 		return pizzaToppings;
 	}
 	
 	public void setPizzaToppings(ArrayList<String> pizzaToppings) {
 		this.pizzaToppings = pizzaToppings;
-	}
-	
-	public String thisPizzaTopping(int x) {
-		if (x < pizzaToppings.size()) {
-			return pizzaToppings.get(x);
-		}
-		return "";
 	}
 }

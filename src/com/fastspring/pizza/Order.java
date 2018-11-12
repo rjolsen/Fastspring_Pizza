@@ -60,8 +60,8 @@ public class Order {
 		this.quantities = quantities;
 	}
 	
-	public ArrayList<Integer> getToppings() {
-		return quantities;
+	public ArrayList<String> getToppings() {
+		return toppings;
 	}
 	
 	public void setToppings(ArrayList<String> toppings) {
