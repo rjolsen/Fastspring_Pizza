@@ -11,11 +11,6 @@ import org.junit.jupiter.api.Test;
 class PizzaTest {
 
 	Pizza p = new Pizza();
-		
-	@Test
-	void testPizza() {
-		assertEquals(new Pizza(), p);
-	}
 
 	@Test
 	void testGetPizzas() {
@@ -42,7 +37,7 @@ class PizzaTest {
 		pizzaList.add("Cheese");
 		pizzaList.add("Pepperoni");
 		pizzaList.add("Meat Lovers");
-		assertArrayEquals(pizzaList.toArray(), p.getPizzaList().toArray());
+		assertEquals(pizzaList.size(), p.getPizzaList().size());
 	}
 
 	@Test
@@ -65,7 +60,21 @@ class PizzaTest {
 	}
 
 	@Test
-	void testGetPizzaToppings() {
+	void testRemovePizzaTopings() {
+		ArrayList<String> toppings = new ArrayList<String>();
+		toppings.add("Tomatoes");
+		toppings.add("Olives");
+		toppings.add("Red Peppers");
+		toppings.add("Mushrooms");
+		toppings.add("Ham");
+		toppings.add("Chicken" );
+//		toppings.add("Pepperoni");
+		Pizza.removePizzaTopings("Pepperoni");
+		assertArrayEquals(toppings.toArray(), Pizza.getPizzaToppings().toArray());
+	}
+	
+	@Test
+	void testAddPizzaTopings() {
 		ArrayList<String> toppings = new ArrayList<String>();
 		toppings.add("Tomatoes");
 		toppings.add("Olives");
@@ -74,20 +83,7 @@ class PizzaTest {
 		toppings.add("Ham");
 		toppings.add("Chicken" );
 		toppings.add("Pepperoni");
-		assertArrayEquals(toppings.toArray(), p.getPizzaToppings().toArray());
+		Pizza.addPizzaToppings("Pepperoni");
+		assertArrayEquals(toppings.toArray(), Pizza.getPizzaToppings().toArray());
 	}
-
-//	@Test
-//	void testSetPizzaToppings() {
-//		ArrayList<String> toppings = new ArrayList<String>();
-//		toppings.add("Tomatoes");
-//		toppings.add("Olives");
-//		toppings.add("Red Peppers");
-//		toppings.add("Mushrooms");
-//		toppings.add("Ham");
-//		toppings.add("Chicken" );
-//		toppings.add("Pepperoni");
-//		p.setPizzaToppings(toppings);
-//		assertArrayEquals(toppings.toArray(), p.getPizzaToppings().toArray());
-//	}
 }

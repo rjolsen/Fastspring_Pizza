@@ -64,13 +64,17 @@ public class Pizza {
 	}
 	
 	public static void removePizzaTopings(String topping) {
-		if (Pizza.pizzaToppings.contains(topping)) {
-			int i = Pizza.pizzaToppings.indexOf(topping);
-			Pizza.pizzaToppings.remove(i);
+		if (topping != null && !topping.isEmpty()) {
+			if (Pizza.pizzaToppings.contains(topping)) {
+				int i = Pizza.pizzaToppings.indexOf(topping);
+				Pizza.pizzaToppings.remove(i);
+			}
 		}
 	}
 	
 	public static void addPizzaToppings(String topping) {
-		Pizza.pizzaToppings.add(topping);
+		if (topping != null && !topping.isEmpty()) {
+			Pizza.pizzaToppings.add(topping);
+		}
 	}
 }
