@@ -16,12 +16,23 @@ Comments:
 
 Main URL:
 >http://localhost:8080/Fastspring_Pizza/
+From this page the user can:
+>1. Create a new pizza order.
+>2. Track an existing pizza order by the order Id.
+>3. Store manager can control toppings(Add or Delete) - anyone can act as manager.
 
 Tracking URL:
 >http://localhost:8080/Fastspring_Pizza/TrackOrder
+From this page the user can:
+>1. Track an existing pizza orderand its current state by the order Id.
 
 Update Toppings URL:
 >http://localhost:8080/Fastspring_Pizza/UpdateToppings
+From this page the store manager can:
+>1. Update toppings available(Add or Delete).
 
 Manager URL:
 >http://localhost:8080/Fastspring_Pizza/Manager
+From this apge the store manager can:
+>1. Update the status of a pizza order.
+>2. Update toppings available(Add or Delete).
